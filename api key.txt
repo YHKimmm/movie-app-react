@@ -1,0 +1,31 @@
+API STORAGE: https://developers.themoviedb.org/3/movies/get-popular-movies
+
+API Key: 8510ce99b1c1d168b91ddf40e467565a
+
+Example API request:
+https://api.themoviedb.org/3/movie/550?api_key=8510ce99b1c1d168b91ddf40e467565a
+
+
+Get Popular API:
+https://api.themoviedb.org/3/movie/popular?api_key=8510ce99b1c1d168b91ddf40e467565a&language=en-US&page=1
+
+https://image.tmdb.org/t/p/w500/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg
+
+
+Detail API:
+
+https://api.themoviedb.org/3/movie/436270?api_key=8510ce99b1c1d168b91ddf40e467565a&language=en-US
+
+TOP RATED API:
+https://api.themoviedb.org/3/movie/top_rated?api_key=8510ce99b1c1d168b91ddf40e467565a&language=en-US&page=1
+
+NOW PLAYING API:
+https://api.themoviedb.org/3/movie/now_playing?api_key=8510ce99b1c1d168b91ddf40e467565a&language=en-US&page=1
+
+UPCOMING API:
+
+https://api.themoviedb.org/3/movie/upcoming?api_key=8510ce99b1c1d168b91ddf40e467565a&language=en-US&page=1
+
+SEARCH API:
+
+https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&language=en-US&page=1&include_adult=false
