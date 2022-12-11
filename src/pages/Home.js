@@ -10,20 +10,24 @@ function Home() {
     const [selectCategory, setSelectCategory] = useState(categories[0]);
     const [search, setSearch] = useState("");
 
+    let baseURL = "https://api.themoviedb.org/3/movie";
+    let searchURL = "https://api.themoviedb.org/3/search/movie"
+    let api_key = "api_key=8510ce99b1c1d168b91ddf40e467565a";
+    let url;
+
     const getMovies = async () => {
-        let url;
         switch (selectCategory) {
             case "popular":
-                url = `https://api.themoviedb.org/3/movie/popular?api_key=8510ce99b1c1d168b91ddf40e467565a&language=en-US&page=1`;
+                url = `${baseURL}/popular?${api_key}&language=en-US&page=1`;
                 break;
             case "top rated":
-                url = `https://api.themoviedb.org/3/movie/top_rated?api_key=8510ce99b1c1d168b91ddf40e467565a&language=en-US&page=1`;
+                url = `${baseURL}/top_rated?${api_key}&language=en-US&page=1`;
                 break;
             case "now playing":
-                url = `https://api.themoviedb.org/3/movie/now_playing?api_key=8510ce99b1c1d168b91ddf40e467565a&language=en-US&page=1`;
+                url = `${baseURL}/now_playing?${api_key}&language=en-US&page=1`;
                 break;
             case "upcoming":
-                url = `https://api.themoviedb.org/3/movie/upcoming?api_key=8510ce99b1c1d168b91ddf40e467565a&language=en-US&page=1`;
+                url = `${baseURL}/upcoming?${api_key}&language=en-US&page=1`;
                 break;
             default:
                 console.log("unrecognized category");
@@ -35,36 +39,51 @@ function Home() {
         setLoading(false);
     }
 
+
+    const getSearchMovies = async () => {
+        url = `${searchURL}?${api_key}&query=${search}`;
+        const response = await fetch(url);
+        const json = await response.json();
+        let results = json.results.slice(0, 12);
+        console.log('search ', results);
+        setMovies(results);
+        setLoading(false);
+    }
+
+    const searchMovies = (e) => {
+        if (e.key === "Enter" && search) {
+            getSearchMovies();
+        } else {
+            getMovies();
+        }
+    }
+
     useEffect(() => {
         getMovies();
         document.title = "Movie Application";
     }, [selectCategory]);
     console.log(movies);
 
-    function handleCategories(event) {
-        setSelectCategory(event.target.value);
+    const handleCategories = (e) => {
+        setSelectCategory(e.target.value);
         console.log(selectCategory);
     }
 
-    const onChange = (e) => {
+    const handleSearch = (e) => {
         setSearch(e.target.value)
         console.log(search);
     }
 
-    const searchMovieByTitle = movies.filter((p) => {
-        return p.title.toLocaleLowerCase().replace(" ", "").includes(search.toLocaleLowerCase().replace(" ", ""))
-    })
-    console.log('searchMovieByTitle ', searchMovieByTitle);
 
     return (
         <div>
-            <Search search={search} onChange={onChange} />
+            <Search search={search} onChange={handleSearch} onKeyDown={searchMovies} />
             <label htmlFor="show">Show me</label>
             <Select onChange={handleCategories} categories={categories} />
             <hr />
             {loading ? (<h1>Loading...</h1>) : (
                 <div>
-                    {searchMovieByTitle.map((movie) => {
+                    {movies.map((movie) => {
                         return (
                             <Movie key={movie.id}
                                 id={movie.id}

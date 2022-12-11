@@ -3,6 +3,7 @@ import Detail from "../pages/Detail";
 import Home from "../pages/Home";
 import Nav from "../components/Nav";
 import About from "../pages/About";
+import Footer from "../components/Footer";
 function AppRouter() {
   return (
     <BrowserRouter>
@@ -12,6 +13,7 @@ function AppRouter() {
         <Route path="/movie/:id" element={<Detail />} />
         <Route path="/about" element={<About />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
