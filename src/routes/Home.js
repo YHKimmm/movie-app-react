@@ -37,7 +37,7 @@ function Home() {
 
     useEffect(() => {
         getMovies();
-        document.title = "Movie App";
+        document.title = "Movie Application";
     }, [selectCategory]);
     console.log(movies);
 
