@@ -12,7 +12,7 @@ function Select({ onChange, categories }) {
 }
 
 Select.propTypes = {
-    categories: PropTypes.arrayOf(String).isRequired,
+    categories: PropTypes.arrayOf(PropTypes.string).isRequired,
     onChange: PropTypes.func.isRequired,
 }
 
