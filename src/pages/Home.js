@@ -3,8 +3,9 @@ import Movie from "../components/Movie";
 import Search from "../components/Search";
 import Select from "../components/Select";
 import styles from "./Home.module.css";
-import { baseURL, searchURL, api_key } from "../globals/globalVariables";
+import { baseURL, api_key } from "../globals/globalVariables";
 import isFav from "../utilities/isFav";
+import isWatch from "../utilities/isWatch";
 import { useSelector } from "react-redux";
 
 function Home() {
@@ -12,10 +13,12 @@ function Home() {
     const [movies, setMovies] = useState([]);
     const categories = ["popular", "top rated", "now playing", "upcoming"];
     const [selectCategory, setSelectCategory] = useState(categories[0]);
-    const [search, setSearch] = useState("");
 
     const favs = useSelector((state) => state.favs.items);
     console.log('favs ', favs);
+
+    const watchLists = useSelector((state) => state.watch.items);
+    console.log('watch lists', watchLists);
 
     let url;
 
@@ -43,26 +46,6 @@ function Home() {
         setLoading(false);
     }
 
-
-    const getSearchMovies = async () => {
-        url = `${searchURL}?${api_key}&query=${search}`;
-        const response = await fetch(url);
-        const json = await response.json();
-        let results = json.results.slice(0, 12);
-        console.log('search ', results);
-        setMovies(results);
-        setLoading(false);
-    }
-
-    const searchMovies = (e) => {
-        if (e.key === "Enter" && search) {
-            getSearchMovies();
-            setSearch("");
-        } else {
-            getMovies();
-        }
-    }
-
     useEffect(() => {
         getMovies();
         document.title = "Movie Application";
@@ -75,17 +58,11 @@ function Home() {
         console.log(selectCategory);
     }
 
-    const handleSearch = (e) => {
-        setSearch(e.target.value);
-        console.log(search);
-    }
-
-
     return (
         <div>
-            <Search search={search} onChange={handleSearch} onKeyDown={searchMovies} />
-            <Select onChange={handleCategories} categories={categories} />
+            <Search getMovies={getMovies} setMovies={setMovies} />
             <hr />
+            <Select onChange={handleCategories} categories={categories} />
             <section className={styles.container}>
                 {loading ? (<div className={styles.loader}>
                     <span>Loading...</span>
@@ -96,12 +73,14 @@ function Home() {
                                 <Movie key={i}
                                     movieObj={movie}
                                     isFav={isFav(favs, movie.id)}
+                                    isWatchList={isWatch(watchLists, movie.id)}
                                 />
                             )
                         })}
                     </div>
                 )}
             </section>
+            <hr />
         </div>
     )
 }

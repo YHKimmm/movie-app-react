@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom";
-
-const imageFolderPath = process.env.PUBLIC_URL + "/assets/images/";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFilm } from '@fortawesome/free-solid-svg-icons';
 
 function Nav() {
     return (
-        <header>
+        <header >
             <h1 className="logo" >
-                <NavLink to="/"><img src={`${imageFolderPath}logo.jpg`} alt="Logo" /></NavLink>
+                <NavLink to="/"><FontAwesomeIcon icon={faFilm} size='2x' style={{ 'padding': '20px' }} /></NavLink>
             </h1>
             <nav>
                 <ul>

@@ -1,4 +1,4 @@
-// Fav Button
+import styles from './FavButton.module.css';
 
 function FavButton({ movieObj, remove, handleFavClick }) {
     function handleAddFav() {
@@ -10,13 +10,13 @@ function FavButton({ movieObj, remove, handleFavClick }) {
     }
 
     return (
-        <>
+        <div className={styles.fav__button}>
             {remove === false ? (
                 <button onClick={handleAddFav}>Add To Favorite</button>
             ) : (
                 <button onClick={handleRemoveFav}>Remove From Favorite</button>
             )}
-        </>
+        </div>
     );
 }
 

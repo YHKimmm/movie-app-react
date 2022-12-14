@@ -1,6 +1,5 @@
 
 function About() {
-
     return (
         <main>
             <section>

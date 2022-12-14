@@ -1,0 +1,7 @@
+.watch__button button {
+  color: gold;
+  border: 0.75px solid #fff;
+  background: transparent;
+  padding: 15px;
+  font-weight: bold;
+}

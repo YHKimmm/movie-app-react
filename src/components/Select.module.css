@@ -1,0 +1,20 @@
+.select__form {
+  padding: 10px 50px;
+}
+
+.select__form label {
+  margin-right: 20px;
+  font-size: 25px;
+}
+
+.select__form select {
+  background-color: transparent;
+  color: #fff;
+  font-size: 1em;
+  height: 40px;
+  padding: 10px;
+}
+
+.select__form option {
+  color: black;
+}

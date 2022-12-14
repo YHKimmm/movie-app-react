@@ -22,14 +22,7 @@ function Detail() {
         <div>
             {loading ? (<h1>Loading Page...</h1>) : (
                 <DetailMovie
-                    key={movie.id}
-                    poster={movie.poster_path}
-                    title={movie.title}
-                    overview={movie.overview}
-                    release_date={movie.release_date}
-                    rate={movie.vote_average}
-                    genres={movie.genres}
-
+                    movieObj={movie}
                 />
             )}
         </div>

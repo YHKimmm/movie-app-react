@@ -1,0 +1,14 @@
+.search__input input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  line-height: 3;
+  padding: 0 10px;
+  font-size: 25px;
+  color: #fff;
+}
+
+.search__input {
+  display: flex;
+  padding: 0 30px;
+}

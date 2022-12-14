@@ -5,6 +5,7 @@ import Nav from "../components/Nav";
 import About from "../pages/About";
 import Footer from "../components/Footer";
 import Favorite from "../pages/Favorite";
+import Watch from "../pages/Watch";
 function AppRouter() {
   return (
     <BrowserRouter>
@@ -14,6 +15,7 @@ function AppRouter() {
         <Route path="/movie/:id" element={<Detail />} />
         <Route path="/about" element={<About />} />
         <Route path="/favorite" element={<Favorite />} />
+        <Route path="/watch-later" element={<Watch />} />
       </Routes>
       <Footer />
     </BrowserRouter>

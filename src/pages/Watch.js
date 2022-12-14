@@ -4,21 +4,21 @@ import { useSelector } from "react-redux";
 import Movie from "../components/Movie";
 import styles from "./Home.module.css";
 
-function Favorite() {
-    const favs = useSelector((state) => state.favs.items);
+function Watch() {
+    // watch came from store.js
+    const watchLater = useSelector((state) => state.watch.items);
 
     return (
         <main>
             <section>
-                <h2>Favorite Characters</h2>
-                {favs.length < 1 ? (
+                <h2>Watch Later Movie List</h2>
+                {watchLater.length < 1 ? (
                     <p>
-                        No favorite characters. Return to the <Link to="/">home</Link> page
-                        to add some favorite characters.
+                        No movies yet in the Watch Later Movie List!
                     </p>
                 ) : (
                     <div className={styles.movies}>
-                        {favs.map((movie, i) => {
+                        {watchLater.map((movie, i) => {
                             return (
                                 <Movie key={i}
                                     movieObj={movie}
@@ -33,4 +33,4 @@ function Favorite() {
     );
 }
 
-export default Favorite;
+export default Watch;
