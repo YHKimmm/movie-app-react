@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import Movie from "../components/Movie";
 import Search from "../components/Search";
 import Select from "../components/Select";
+import styles from "./Home.module.css";
+import { baseURL, searchURL, api_key } from "../globals/globalVariables";
+import isFav from "../utilities/isFav";
+import { useSelector } from "react-redux";
 
 function Home() {
     const [loading, setLoading] = useState(true);
@@ -10,9 +14,9 @@ function Home() {
     const [selectCategory, setSelectCategory] = useState(categories[0]);
     const [search, setSearch] = useState("");
 
-    let baseURL = "https://api.themoviedb.org/3/movie";
-    let searchURL = "https://api.themoviedb.org/3/search/movie"
-    let api_key = "api_key=8510ce99b1c1d168b91ddf40e467565a";
+    const favs = useSelector((state) => state.favs.items);
+    console.log('favs ', favs);
+
     let url;
 
     const getMovies = async () => {
@@ -53,6 +57,7 @@ function Home() {
     const searchMovies = (e) => {
         if (e.key === "Enter" && search) {
             getSearchMovies();
+            setSearch("");
         } else {
             getMovies();
         }
@@ -61,6 +66,7 @@ function Home() {
     useEffect(() => {
         getMovies();
         document.title = "Movie Application";
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [selectCategory]);
     console.log(movies);
 
@@ -70,7 +76,7 @@ function Home() {
     }
 
     const handleSearch = (e) => {
-        setSearch(e.target.value)
+        setSearch(e.target.value);
         console.log(search);
     }
 
@@ -78,24 +84,24 @@ function Home() {
     return (
         <div>
             <Search search={search} onChange={handleSearch} onKeyDown={searchMovies} />
-            <label htmlFor="show">Show me</label>
             <Select onChange={handleCategories} categories={categories} />
             <hr />
-            {loading ? (<h1>Loading...</h1>) : (
-                <div>
-                    {movies.map((movie) => {
-                        return (
-                            <Movie key={movie.id}
-                                id={movie.id}
-                                poster={movie.poster_path}
-                                title={movie.title}
-                                overview={movie.overview}
-                                release_date={movie.release_date}
-                            />
-                        )
-                    })}
-                </div>
-            )}
+            <section className={styles.container}>
+                {loading ? (<div className={styles.loader}>
+                    <span>Loading...</span>
+                </div>) : (
+                    <div className={styles.movies}>
+                        {movies.map((movie, i) => {
+                            return (
+                                <Movie key={i}
+                                    movieObj={movie}
+                                    isFav={isFav(favs, movie.id)}
+                                />
+                            )
+                        })}
+                    </div>
+                )}
+            </section>
         </div>
     )
 }

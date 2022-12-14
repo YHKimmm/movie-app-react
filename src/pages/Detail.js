@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import DetailMovie from "../components/DetailMovie";
+import { baseURL, api_key } from "../globals/globalVariables";
 
 function Detail() {
     const [loading, setLoading] = useState(true);
@@ -8,7 +9,7 @@ function Detail() {
     const { id } = useParams();
     console.log(id);
     const getMovie = async () => {
-        const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=8510ce99b1c1d168b91ddf40e467565a&language=en-US`);
+        const response = await fetch(`${baseURL}/${id}?${api_key}&language=en-US`);
         const json = await response.json();
         setMovie(json);
         setLoading(false);

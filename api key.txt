@@ -29,3 +29,14 @@ https://api.themoviedb.org/3/movie/upcoming?api_key=8510ce99b1c1d168b91ddf40e467
 SEARCH API:
 
 https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&language=en-US&page=1&include_adult=false
+export const fetchSearchMovies = (searchValue) => BASE_AXIOS.get(`/search/movie?api_key=${API_KEY}&query=${searchValue}`);
+
+https://api.themoviedb.org/3"/search/movie?api_key=8510ce99b1c1d168b91ddf40e467565a&query=범죄도시
+
+https://api.themoviedb.org/3/search/movie?api_key=8510ce99b1c1d168b91ddf40e467565a&query=Jack+Reacher
+
+
+Redux
+
+npm install @reduxjs/toolkit react-redux
+

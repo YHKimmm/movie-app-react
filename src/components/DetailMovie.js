@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 function DetailMovie({ poster, title, overview, release_date, rate, genres, id }) {
     return (
         <div id={id}>
-            <img src={`https://image.tmdb.org/t/p/w300${poster}`} alt={title} />
+            {poster === null ? (<p>no image available</p>)
+                : (<img src={`https://image.tmdb.org/t/p/w300${poster}`} alt={title} />)}
             <h2>{title}</h2>
             <p>Overview: {overview}</p>
             <p>Release: {release_date}</p>
