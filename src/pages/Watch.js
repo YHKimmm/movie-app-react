@@ -22,7 +22,7 @@ function Watch() {
                             return (
                                 <Movie key={i}
                                     movieObj={movie}
-                                    isFav={true}
+                                    isWatchList={true}
                                 />
                             );
                         })}

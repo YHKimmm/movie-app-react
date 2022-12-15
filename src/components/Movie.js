@@ -54,7 +54,7 @@ function Movie({ movieObj, isFav, isWatchList }) {
             <p className={styles.movie__year}>{movieObj.release_date}</p>
             <p className={styles.movie__overview}>{movieObj.overview}</p>
             <div className="btn-favourite">
-                {isFav ? (
+                {!isWatchList && (isFav ? (
                     <FavButton
                         movieObj={movieObj}
                         remove={true}
@@ -65,10 +65,10 @@ function Movie({ movieObj, isFav, isWatchList }) {
                         movieObj={movieObj}
                         handleFavClick={handleFavClick}
                     />
-                )}
+                ))}
             </div>
             <div className="btn-watch">
-                {isWatchList ? (
+                {!isFav && (isWatchList ? (
                     <WatchButton
                         movieObj={movieObj}
                         remove={true}
@@ -79,7 +79,7 @@ function Movie({ movieObj, isFav, isWatchList }) {
                         movieObj={movieObj}
                         handleWatchClick={handleWatchListClick}
                     />
-                )}
+                ))}
             </div>
         </div>
     )
