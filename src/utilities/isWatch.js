@@ -1,7 +1,6 @@
 function isWatch(arr, id) {
-
-    // Checks whether the object is watched later
-    return arr.some((obj) => obj.id === id);
+    const watchLaterLists = arr.some((obj) => obj.id === id)
+    return watchLaterLists;
 
 }
 

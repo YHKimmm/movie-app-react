@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { addFav, deleteFav } from "../features/favs/favsSlice";
 import FavButton from "./FavButton";
 import WatchButton from "./WatchButton";
-import { addWatchList, deleteWatchList } from "../features/favs/watchSlice";
+import { addWatchList, deleteWatchList } from "../features/watch/watchSlice";
 
 const imageFolderPath = process.env.PUBLIC_URL + "/assets/images/";
 
@@ -54,7 +54,7 @@ function Movie({ movieObj, isFav, isWatchList }) {
             <p className={styles.movie__year}>{movieObj.release_date}</p>
             <p className={styles.movie__overview}>{movieObj.overview}</p>
             <div className="btn-favourite">
-                {!isWatchList && (isFav ? (
+                {isFav ? (
                     <FavButton
                         movieObj={movieObj}
                         remove={true}
@@ -65,10 +65,10 @@ function Movie({ movieObj, isFav, isWatchList }) {
                         movieObj={movieObj}
                         handleFavClick={handleFavClick}
                     />
-                ))}
+                )}
             </div>
             <div className="btn-watch">
-                {!isFav && (isWatchList ? (
+                {isWatchList ? (
                     <WatchButton
                         movieObj={movieObj}
                         remove={true}
@@ -78,8 +78,9 @@ function Movie({ movieObj, isFav, isWatchList }) {
                     <WatchButton
                         movieObj={movieObj}
                         handleWatchClick={handleWatchListClick}
+
                     />
-                ))}
+                )}
             </div>
         </div>
     )

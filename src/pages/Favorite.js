@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Movie from "../components/Movie";
 import styles from "./Home.module.css";
+import isFav from "../utilities/isFav";
+import isWatch from "../utilities/isWatch";
 
 function Favorite() {
     const favs = useSelector((state) => state.favs.items);
+
+    const watchLists = useSelector((state) => state.watch.items);
 
     return (
         <main>
@@ -22,7 +26,8 @@ function Favorite() {
                             return (
                                 <Movie key={i}
                                     movieObj={movie}
-                                    isFav={true}
+                                    isFav={isFav(favs, movie.id)}
+                                    isWatchList={isWatch(watchLists, movie.id)}
                                 />
                             );
                         })}

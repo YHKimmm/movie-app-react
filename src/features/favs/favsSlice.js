@@ -29,20 +29,12 @@ export const favsSlice = createSlice({
         addFav: (state, action) => {
             const newFavs = [...state.items, action.payload];
             localStorage.setItem(appStorageName, JSON.stringify(newFavs));
-            // Redux Toolkit allows us to write "mutating" logic in reducers. It
-            // doesn't actually mutate the state because it uses the Immer library,
-            // which detects changes to a "draft state" and produces a brand new
-            // immutable state based off those changes
             state.items = newFavs;
         },
         deleteFav: (state, action) => {
             const itemsCopy = state.items;
             itemsCopy.splice(getIndex(action.payload, state.items), 1);
             localStorage.setItem(appStorageName, JSON.stringify(itemsCopy));
-            // Redux Toolkit allows us to write "mutating" logic in reducers. It
-            // doesn't actually mutate the state because it uses the Immer library,
-            // which detects changes to a "draft state" and produces a brand new
-            // immutable state based off those changes
             state.items = itemsCopy;
         }
     },

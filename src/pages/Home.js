@@ -15,10 +15,11 @@ function Home() {
     const [selectCategory, setSelectCategory] = useState(categories[0]);
 
     const favs = useSelector((state) => state.favs.items);
-    console.log('favs ', favs);
+    console.log('favourite lists ', favs);
 
     const watchLists = useSelector((state) => state.watch.items);
     console.log('watch lists', watchLists);
+
 
     let url;
 

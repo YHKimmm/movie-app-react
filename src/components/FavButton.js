@@ -1,5 +1,4 @@
 import styles from './FavButton.module.css';
-
 function FavButton({ movieObj, remove, handleFavClick }) {
     function handleAddFav() {
         handleFavClick(true, movieObj);
