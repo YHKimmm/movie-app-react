@@ -47,6 +47,9 @@ function Movie({ movieObj, isFav, isWatchList }) {
             <h2 className={styles.movie__title}>
                 <Link to={`/movie/${movieObj.id}`}>{movieObj.title}</Link>
             </h2>
+            <Link to={`/movie/${movieObj.id}`}>
+                <button className={styles.more__info}>More Info</button>
+            </Link>
             <section className={styles.movie__rate}>
                 <img src={`${imageFolderPath}star.png`} alt="Heart" className={styles.star} />
                 <p>{Math.ceil(movieObj.vote_average * 10)}%</p>

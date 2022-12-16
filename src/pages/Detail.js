@@ -25,6 +25,7 @@ function Detail() {
                     movieObj={movie}
                 />
             )}
+            <hr />
         </div>
     );
 }
