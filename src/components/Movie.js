@@ -42,8 +42,10 @@ function Movie({ movieObj, isFav, isWatchList }) {
                     <img src={`${imageFolderPath}puls.png`} alt="Puls" className={styles.puls} />
                 </div>
             )}
-            {movieObj.poster_path === null ? (<p>no image available</p>)
-                : (<img src={`https://image.tmdb.org/t/p/w300${movieObj.poster_path}`} alt={movieObj.title} className={styles.movie__img} />)}
+            <div className={styles.movie__poster}>
+                {movieObj.poster_path === null ? (<p>no image available</p>)
+                    : (<img src={`https://image.tmdb.org/t/p/w300${movieObj.poster_path}`} alt={movieObj.title} className={styles.movie__img} />)}
+            </div>
             <h2 className={styles.movie__title}>
                 <Link to={`/movie/${movieObj.id}`}>{movieObj.title}</Link>
             </h2>
@@ -56,35 +58,37 @@ function Movie({ movieObj, isFav, isWatchList }) {
             </section>
             <p className={styles.movie__year}>{movieObj.release_date}</p>
             <p className={styles.movie__overview}>{movieObj.overview}</p>
-            <div className="btn-favourite">
-                {isFav ? (
-                    <FavButton
-                        movieObj={movieObj}
-                        remove={true}
-                        handleFavClick={handleFavClick}
-                    />
-                ) : (
-                    <FavButton
-                        movieObj={movieObj}
-                        handleFavClick={handleFavClick}
-                    />
-                )}
-            </div>
-            <div className="btn-watch">
-                {isWatchList ? (
-                    <WatchButton
-                        movieObj={movieObj}
-                        remove={true}
-                        handleWatchClick={handleWatchListClick}
-                    />
-                ) : (
-                    <WatchButton
-                        movieObj={movieObj}
-                        handleWatchClick={handleWatchListClick}
+            <section className={styles.movie__utilities}>
+                <div className="btn-favourite">
+                    {isFav ? (
+                        <FavButton
+                            movieObj={movieObj}
+                            remove={true}
+                            handleFavClick={handleFavClick}
+                        />
+                    ) : (
+                        <FavButton
+                            movieObj={movieObj}
+                            handleFavClick={handleFavClick}
+                        />
+                    )}
+                </div>
+                <div className="btn-watch">
+                    {isWatchList ? (
+                        <WatchButton
+                            movieObj={movieObj}
+                            remove={true}
+                            handleWatchClick={handleWatchListClick}
+                        />
+                    ) : (
+                        <WatchButton
+                            movieObj={movieObj}
+                            handleWatchClick={handleWatchListClick}
 
-                    />
-                )}
-            </div>
+                        />
+                    )}
+                </div>
+            </section>
         </div>
     )
 }

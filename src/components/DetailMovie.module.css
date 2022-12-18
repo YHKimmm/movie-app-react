@@ -4,21 +4,35 @@
   text-decoration: none;
   position: relative;
   margin: 0;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .movie__bgPoster {
   background-color: #485661;
   background-blend-mode: multiply;
-  position: relative;
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
-  width: 100%;
-  height: 60vh;
+  height: 70vh;
+  padding: 20px;
+  padding-bottom: 10px;
+}
+
+.utilities {
   display: flex;
   justify-content: center;
-  border-top: 5px double #947575;
-  border-bottom: 5px double #947575;
+  align-items: center;
+  width: 100%;
+}
+
+.buttons {
+  margin-left: 20px;
+  display: flex;
+}
+
+.fav__button {
+  margin-right: 20px;
 }
 
 .movie__sPoster {
@@ -39,8 +53,7 @@
 }
 
 .detail__movie h1 {
-  font-size: 3em;
-  margin-bottom: 1em;
+  font-size: 2.5em;
 }
 
 .detail__movie h3 {
@@ -57,11 +70,18 @@
 .movie__content {
   margin: 40px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.movie__information {
+  display: flex;
   flex-wrap: wrap;
+  margin-top: 40px;
 }
 
 .overview {
-  width: 100%;
+  width: 80%;
 }
 
 .released {
@@ -70,4 +90,73 @@
 
 .rates {
   width: 50%;
+}
+
+@media screen and (max-width: 1118px) {
+  .detail__movie {
+    display: block;
+  }
+  .movie__bgPoster {
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .detail__movie {
+    display: block;
+  }
+  .movie__bgPoster {
+    height: auto;
+    padding: 100px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .detail__movie h1 {
+    font-size: 27px;
+  }
+
+  .detail__movie h3 {
+    font-size: 23px;
+  }
+
+  .detail__movie p {
+    font-size: 18px;
+  }
+
+  .detail__movie img {
+    max-width: 250px;
+    margin-top: 2em;
+  }
+
+  .detail__movie .buttons {
+    margin: 0;
+  }
+
+  .detail__movie button {
+    font-size: 13px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: auto;
+    max-height: 50px;
+  }
+
+  .detail__movie button svg {
+    max-width: 25px;
+  }
+
+  .detail__movie .utilities {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 635px) {
+  .detail__movie h1 {
+    margin-bottom: 10px;
+  }
+  .detail__movie .buttons {
+    display: inline;
+  }
 }

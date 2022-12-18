@@ -13,12 +13,14 @@ function Watch() {
 
     return (
         <main>
-            <section>
-                <h2>Watch Later Movie List</h2>
+            <h2 style={{ 'paddingLeft': '20px' }}>Watch Later Movie List</h2>
+            <section className={styles.container}>
                 {watchLists.length < 1 ? (
-                    <p>
-                        No movies yet in the Watch Later Movie List!
-                    </p>
+                    <div className={styles.empty}>
+                        <p>
+                            No movies yet in the Watch Later Movie List!
+                        </p>
+                    </div>
                 ) : (
                     <div className={styles.movies}>
                         {watchLists.map((movie, i) => {

@@ -16,10 +16,18 @@
 .movies {
   display: grid;
   grid-template-columns: repeat(3, minmax(200px, 1fr));
-  grid-gap: 100px;
+  grid-gap: 80px;
   padding: 50px;
   width: 80%;
-  padding-top: 70px;
+  padding-top: 50px;
+}
+
+.empty {
+  text-align: center;
+  font-size: 30px;
+  padding: 3.5em;
+  border-bottom: 3px solid white;
+  line-height: 1.6;
 }
 
 @media screen and (max-width: 1090px) {
@@ -29,9 +37,14 @@
   }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 780px) {
   .movies {
     grid-template-columns: 1fr;
     width: 100%;
+    grid-gap: 0;
+    padding-top: 30px;
+  }
+  .empty {
+    font-size: 18px;
   }
 }

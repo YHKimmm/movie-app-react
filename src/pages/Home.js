@@ -60,7 +60,7 @@ function Home() {
     }
 
     return (
-        <div>
+        <main>
             <Search getMovies={getMovies} setMovies={setMovies} />
             <hr />
             <Select onChange={handleCategories} categories={categories} />
@@ -82,7 +82,7 @@ function Home() {
                 )}
             </section>
             <hr />
-        </div>
+        </main>
     )
 }
 

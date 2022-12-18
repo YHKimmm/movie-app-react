@@ -4,5 +4,19 @@
   background: transparent;
   padding: 15px;
   font-weight: bold;
-  border-radius: 10%;
+  border-radius: 20px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.fav__button svg {
+  color: tomato;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 780px) {
+  .fav__button button {
+    font-size: smaller;
+  }
 }

@@ -99,6 +99,10 @@
   opacity: 0.7;
 }
 
+.movie__utilities button {
+  margin-bottom: 20px;
+}
+
 .more__info {
   color: #fff;
   border: 0.75px solid #fff;
@@ -114,9 +118,38 @@
   color: aquamarine;
 }
 
-@media screen and (max-width: 1090px) {
-  .heart {
-    max-width: 3em;
-    width: 100%;
+@media screen and (max-width: 780px) {
+  .movie img {
+    max-width: 280px;
+    height: auto;
+  }
+
+  .movie .heart,
+  .movie .puls {
+    max-width: 30px;
+    height: auto;
+    position: absolute;
+    right: -10px;
+    top: -5px;
+  }
+
+  .movie .movie__title a {
+    font-size: 27px;
+  }
+
+  .movie .more__info {
+    font-size: 18px;
+  }
+
+  .movie .movie__rate .star {
+    max-width: 110px;
+  }
+
+  .movie p {
+    font-size: 18px;
+  }
+
+  .movie__utilities button {
+    padding: 10px;
   }
 }

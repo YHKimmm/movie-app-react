@@ -13,15 +13,18 @@ function Favorite() {
 
     return (
         <main>
-            <section>
-                <h2>Favorite Characters</h2>
+            <h2 style={{ 'paddingLeft': '20px' }}>Favorite Movies</h2>
+            <section className={styles.container}>
                 {favs.length < 1 ? (
-                    <p>
-                        No favorite characters. Return to the <Link to="/">home</Link> page
-                        to add some favorite characters.
-                    </p>
+                    <div className={styles.empty}>
+                        <p>
+                            Sorry you have no favourited movies. Return to the home page to add a
+                            favourite movie
+                        </p>
+
+                    </div>
                 ) : (
-                    <div className={styles.movies}>
+                    <div className={`${styles.movies} ${styles.favorite__movie}`}>
                         {favs.map((movie, i) => {
                             return (
                                 <Movie key={i}

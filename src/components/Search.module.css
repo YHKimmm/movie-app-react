@@ -12,3 +12,17 @@
   display: flex;
   padding: 0 30px;
 }
+
+@media (max-width: 780px) {
+  .search__input {
+    padding: 0 20px;
+  }
+
+  .search__input svg {
+    font-size: 23px;
+  }
+
+  .search__input input {
+    font-size: 22px;
+  }
+}

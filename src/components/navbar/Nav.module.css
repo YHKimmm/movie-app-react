@@ -1,0 +1,61 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .mobile__navigation {
+  display: none;
+}
+
+.logo svg {
+  font-size: 50px;
+}
+
+@media (max-width: 780px) {
+  .navbar .navigation {
+    display: none;
+  }
+  .navbar .mobile__navigation {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar .mobile__navigation .hamburger {
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+  }
+
+  .navbar .mobile__navigation .closeIcon {
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+  }
+
+  .navbar nav ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 100%;
+    background-color: hwb(205 4% 79%);
+    border-top: 5px solid white;
+    z-index: 2;
+  }
+
+  .navbar nav ul li {
+    padding-left: 10%;
+    margin: 15px;
+    padding: 0;
+  }
+
+  .navbar nav ul li a {
+    font-size: 22px;
+  }
+
+  .navbar {
+    opacity: 1;
+  }
+}
