@@ -13,7 +13,8 @@ function Watch() {
 
     return (
         <main>
-            <h2 style={{ 'paddingLeft': '20px' }}>Watch Later Movie List</h2>
+            <hr />
+            <h2 style={{ 'padding': '40px' }}>Watch Later Movie Lists</h2>
             <section className={styles.container}>
                 {watchLists.length < 1 ? (
                     <div className={styles.empty}>

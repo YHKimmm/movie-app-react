@@ -82,19 +82,18 @@
 .heart {
   position: absolute;
   top: -1em;
-  right: -1.5em;
-  max-width: 4em;
+  right: -1.3em;
+  max-width: 3em;
   width: 80%;
   z-index: 1;
   opacity: 0.7;
 }
 
-.puls {
+.plus {
+  color: aquamarine;
   position: absolute;
-  top: -1em;
-  right: -1.5em;
-  max-width: 4em;
-  width: 80%;
+  top: -0.5em;
+  right: -0.4em;
   z-index: 1;
   opacity: 0.7;
 }
@@ -125,7 +124,7 @@
   }
 
   .movie .heart,
-  .movie .puls {
+  .movie .plus {
     max-width: 30px;
     height: auto;
     position: absolute;

@@ -1,5 +1,5 @@
 .select__form {
-  padding: 10px 50px;
+  padding: 10px 110px;
 }
 
 .select__form label {
@@ -17,4 +17,16 @@
 
 .select__form option {
   color: black;
+}
+
+@media (max-width: 1180px) {
+  .select__form {
+    padding: 10px 40px 0px;
+  }
+}
+
+@media (max-width: 780px) {
+  .select__form label {
+    font-size: 20px;
+  }
 }

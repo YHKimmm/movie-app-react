@@ -6,6 +6,8 @@ import { addFav, deleteFav } from "../features/favs/favsSlice";
 import FavButton from "./FavButton";
 import WatchButton from "./WatchButton";
 import { addWatchList, deleteWatchList } from "../features/watch/watchSlice";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const imageFolderPath = process.env.PUBLIC_URL + "/assets/images/";
 
@@ -39,7 +41,7 @@ function Movie({ movieObj, isFav, isWatchList }) {
             )}
             {isWatchList && (
                 <div className="watch-list">
-                    <img src={`${imageFolderPath}puls.png`} alt="Puls" className={styles.puls} />
+                    <FontAwesomeIcon icon={faPlus} size='3x' className={styles.plus} />
                 </div>
             )}
             <div className={styles.movie__poster}>

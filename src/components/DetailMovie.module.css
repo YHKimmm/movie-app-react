@@ -64,7 +64,6 @@
 .detail__movie p {
   font-size: 1.3em;
   line-height: 1.7;
-  font-family: Lato, sans-serif;
 }
 
 .movie__content {
@@ -92,7 +91,7 @@
   width: 50%;
 }
 
-@media screen and (max-width: 1118px) {
+@media (max-width: 1200px) {
   .detail__movie {
     display: block;
   }
@@ -101,7 +100,7 @@
   }
 }
 
-@media screen and (min-width: 1300px) {
+@media (min-width: 1300px) {
   .detail__movie {
     display: block;
   }
@@ -111,7 +110,7 @@
   }
 }
 
-@media screen and (max-width: 780px) {
+@media (max-width: 900px) {
   .detail__movie h1 {
     font-size: 27px;
   }
@@ -152,7 +151,7 @@
   }
 }
 
-@media screen and (max-width: 635px) {
+@media (max-width: 635px) {
   .detail__movie h1 {
     margin-bottom: 10px;
   }

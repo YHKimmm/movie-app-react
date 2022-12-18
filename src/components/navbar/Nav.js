@@ -1,18 +1,20 @@
 import { NavLink } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import styles from './Nav.module.css';
 import MobileNavigation from "./MobileNavigation";
 import Navigation from "./Navigation";
 
+const imageFolderPath = process.env.PUBLIC_URL + "/assets/images/";
+
 function Nav() {
     return (
         <div className={styles.navbar}>
-            <h1 className={styles.logo} >
-                <NavLink to="/"><FontAwesomeIcon icon={faFilm} style={{ 'padding': '20px' }} /></NavLink>
+            <h1 className={styles.title}>
+                <img src={`${imageFolderPath}logo.jpg`} alt='logo' className={styles.logo} />
+                <NavLink to='/'>MegaBox</NavLink>
             </h1>
-            <MobileNavigation />
+            <MobileNavigation style={{ 'padding': '20px' }} />
             <Navigation />
+
         </div>
     );
 }

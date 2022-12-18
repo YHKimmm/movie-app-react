@@ -6,16 +6,23 @@
   padding: 0 10px;
   font-size: 25px;
   color: #fff;
+  outline: none;
 }
 
 .search__input {
   display: flex;
-  padding: 0 30px;
+  padding: 0px 90px;
+}
+
+@media (max-width: 1180px) {
+  .search__input {
+    padding: 10px 20px 0px;
+  }
 }
 
 @media (max-width: 780px) {
   .search__input {
-    padding: 0 20px;
+    padding: 10px 20px 0px;
   }
 
   .search__input svg {

@@ -81,7 +81,6 @@ function Home() {
                     </div>
                 )}
             </section>
-            <hr />
         </main>
     )
 }
