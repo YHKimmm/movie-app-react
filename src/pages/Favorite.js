@@ -1,10 +1,9 @@
-// Page Favs
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Movie from "../components/Movie";
 import styles from "./Home.module.css";
 import isFav from "../utilities/isFav";
 import isWatch from "../utilities/isWatch";
+import { Link } from "react-router-dom";
 
 function Favorite() {
     const favs = useSelector((state) => state.favs.items);
@@ -12,14 +11,14 @@ function Favorite() {
     const watchLists = useSelector((state) => state.watch.items);
 
     return (
-        <main>
+        <main className={styles.wrapper}>
             <hr />
-            <h2 style={{ 'padding': '40px' }}>Favorite Movies</h2>
+            <h3>Favorite Movies</h3>
             <section className={styles.container}>
                 {favs.length < 1 ? (
                     <div className={styles.empty}>
                         <p>
-                            Sorry you have no favourited movies. Return to the home page to add a
+                            Sorry you have no favourited movies. Return to the <Link to='/'>Home</Link> page to add a
                             favourite movie
                         </p>
 

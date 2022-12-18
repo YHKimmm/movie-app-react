@@ -1,3 +1,7 @@
+.wrapper h3 {
+  padding: 10px 110px;
+}
+
 .container {
   height: 100%;
   display: flex;
@@ -29,6 +33,14 @@
   line-height: 1.6;
 }
 
+.empty p a {
+  font-weight: 800;
+}
+
+.empty p a:hover {
+  color: aquamarine;
+}
+
 @media screen and (max-width: 1400px) {
   .movies {
     display: grid;
@@ -46,5 +58,14 @@
   }
   .empty {
     font-size: 18px;
+  }
+
+  .empty p a {
+    font-size: 20px;
+  }
+
+  .wrapper h3 {
+    font-size: 25px;
+    padding: 10px 40px 0;
   }
 }
