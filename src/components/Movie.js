@@ -59,7 +59,7 @@ function Movie({ movieObj, isFav, isWatchList }) {
                 <p>{Math.ceil(movieObj.vote_average * 10)}%</p>
             </section>
             <p className={styles.movie__year}>{movieObj.release_date}</p>
-            <p className={styles.movie__overview}>{movieObj.overview}</p>
+            <p className={styles.movie__overview}>{movieObj.overview.slice(0, 150)}...</p>
             <section className={styles.movie__utilities}>
                 <div className="btn-favourite">
                     {isFav ? (
