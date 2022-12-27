@@ -45,7 +45,7 @@ function Movie({ movieObj, isFav, isWatchList }) {
                 </div>
             )}
             <div className={styles.movie__poster}>
-                {movieObj.poster_path === null ? (<p>no image available</p>)
+                {movieObj.poster_path === null ? (<img src={`${imageFolderPath}NoImagePlaceHolder.png`} alt="NoImagePlaceHolder" className={styles.movie__img} />)
                     : (<img src={`https://image.tmdb.org/t/p/w300${movieObj.poster_path}`} alt={movieObj.title} className={styles.movie__img} />)}
             </div>
             <h2 className={styles.movie__title}>
@@ -55,7 +55,7 @@ function Movie({ movieObj, isFav, isWatchList }) {
                 <button className={styles.more__info}>More Info</button>
             </Link>
             <section className={styles.movie__rate}>
-                <img src={`${imageFolderPath}star.png`} alt="Heart" className={styles.star} />
+                <img src={`${imageFolderPath}star.png`} alt="Star" className={styles.star} />
                 <p>{Math.ceil(movieObj.vote_average * 10)}%</p>
             </section>
             <p className={styles.movie__year}>{movieObj.release_date}</p>

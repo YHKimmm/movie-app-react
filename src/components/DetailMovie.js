@@ -6,6 +6,8 @@ import FavButton from "./FavButton";
 import WatchButton from "./WatchButton";
 import { addWatchList, deleteWatchList } from "../features/watch/watchSlice";
 
+const imageFolderPath = process.env.PUBLIC_URL + "/assets/images/";
+
 function DetailMovie({ movieObj, isFav, isWatchList }) {
     const dispatch = useDispatch();
 
@@ -30,7 +32,7 @@ function DetailMovie({ movieObj, isFav, isWatchList }) {
     return (
         <div className={`${styles.movie__bgPoster} ${styles.detail__movie}`} style={{ backgroundImage: `url("https://image.tmdb.org/t/p/w300${movieObj.backdrop_path}")` }}>
             <div className={styles.movie__sPoster}>
-                {movieObj.poster_path === null ? (<p>No Image Available</p>)
+                {movieObj.poster_path === null ? (<img src={`${imageFolderPath}NoImagePlaceHolder.png`} alt="NoImagePlaceHolder" />)
                     : (<img src={`https://image.tmdb.org/t/p/w300${movieObj.poster_path}`} alt={movieObj.title} />)}
             </div>
             <section className={styles.movie__content}>
