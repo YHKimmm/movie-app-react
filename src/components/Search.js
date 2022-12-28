@@ -28,9 +28,8 @@ function Search({ getMovies, setMovies }) {
         }
     }
 
-    const mobileSearch = (e) => {
+    const mobileSearch = () => {
         if (search) {
-            e.preventDefault();
             getSearchMovies();
             setSearch("");
         } else {
