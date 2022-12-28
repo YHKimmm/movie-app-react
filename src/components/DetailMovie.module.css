@@ -92,7 +92,7 @@
   width: 50%;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .detail__movie {
     display: block;
   }
