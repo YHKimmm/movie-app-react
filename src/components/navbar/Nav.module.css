@@ -5,9 +5,12 @@
   padding: 40px 100px;
 }
 
+.navbar .navigation {
+  padding-top: 1.3em;
+}
+
 .navbar .mobile__navigation {
   display: none;
-  padding-bottom: 20px;
 }
 
 .logo {
@@ -81,16 +84,13 @@
   .navbar .mobile__navigation .hamburger {
     position: absolute;
     right: 5%;
-    top: 5%;
     cursor: pointer;
     max-width: 40px;
-    height: auto;
   }
 
   .navbar .mobile__navigation .closeIcon {
     position: absolute;
     right: 5%;
-    top: 4.5%;
     cursor: pointer;
     max-width: 45px;
   }
