@@ -10,6 +10,11 @@
   align-items: center;
 }
 
+.fav__button button:hover {
+  border: 3px solid tomato;
+  color: tomato;
+}
+
 .fav__button svg {
   color: tomato;
   margin-right: 20px;
