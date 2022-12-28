@@ -132,6 +132,10 @@
 }
 
 @media screen and (max-width: 780px) {
+  .movie {
+    display: grid;
+    grid-gap: 10px;
+  }
   .movie__poster img {
     max-width: 200px;
     height: auto;

@@ -47,6 +47,9 @@
     grid-template-columns: repeat(2, minmax(200px, 1fr));
     width: 100%;
   }
+  .wrapper h3 {
+    padding: 10px 60px;
+  }
 }
 
 @media screen and (max-width: 780px) {
@@ -65,7 +68,7 @@
   }
 
   .wrapper h3 {
-    font-size: 25px;
+    font-size: 1em;
     padding: 10px 40px 0;
   }
 }
