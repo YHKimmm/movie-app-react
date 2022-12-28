@@ -79,6 +79,16 @@
   height: 30px;
 }
 
+.star__green {
+  filter: hue-rotate(304deg) saturate(94%) brightness(230%);
+  height: 30px;
+}
+
+.star__yellow {
+  filter: hue-rotate(174deg) saturate(94%) brightness(230%);
+  height: 30px;
+}
+
 .heart {
   position: absolute;
   top: -1em;
@@ -118,8 +128,8 @@
 }
 
 @media screen and (max-width: 780px) {
-  .movie img {
-    max-width: 280px;
+  .movie__poster img {
+    max-width: 200px;
     height: auto;
   }
 
@@ -140,8 +150,11 @@
     font-size: 18px;
   }
 
-  .movie .movie__rate .star {
-    max-width: 110px;
+  .movie .movie__rate .star,
+  .star__yellow,
+  .star__green {
+    max-width: 80px;
+    height: auto;
   }
 
   .movie p {

@@ -8,8 +8,10 @@ import WatchButton from "./WatchButton";
 import { addWatchList, deleteWatchList } from "../features/watch/watchSlice";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import MovieRate from "./MovieRate";
 
 const imageFolderPath = process.env.PUBLIC_URL + "/assets/images/";
+
 function Movie({ movieObj, isFav, isWatchList }) {
 
     const dispatch = useDispatch();
@@ -54,11 +56,8 @@ function Movie({ movieObj, isFav, isWatchList }) {
             <Link to={`/movie/${movieObj.id}`}>
                 <button className={styles.more__info}>More Info</button>
             </Link>
-            <section className={styles.movie__rate}>
-                {movieObj.vote_average === 0 ? (<img src={`${imageFolderPath}star.png`} alt="Star" className={styles.star} style={{ "opacity": 0.5 }} />
-                ) : (<img src={`${imageFolderPath}star.png`} alt="Star" className={styles.star} />
-                )}
-                <p>{Math.ceil(movieObj.vote_average * 10)}%</p>
+            <section className={styles.movie__rates}>
+                <MovieRate movieObj={movieObj} />
             </section>
             <p className={styles.movie__year}>{movieObj.release_date}</p>
             <p className={styles.movie__overview}>{movieObj.overview.slice(0, 150)}...</p>
