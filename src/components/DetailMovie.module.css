@@ -14,7 +14,7 @@
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
-  height: 70vh;
+  height: 75vh;
   padding: 20px;
   padding-bottom: 10px;
 }
@@ -46,7 +46,8 @@
 }
 
 .detail__movie h1 {
-  font-size: 2em;
+  font-size: 3em;
+  font-weight: bold;
   margin-bottom: 1em;
 }
 
@@ -92,7 +93,7 @@
   width: 50%;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1300px) {
   .detail__movie {
     display: block;
   }
@@ -101,7 +102,7 @@
   }
 }
 
-@media (min-width: 1300px) {
+/* @media (min-width: 1600px) {
   .detail__movie {
     display: block;
   }
@@ -109,9 +110,13 @@
     height: auto;
     padding: 100px;
   }
-}
+} */
 
 @media (max-width: 900px) {
+  .detail__movie h1 {
+    font-size: 2em;
+  }
+
   .detail__movie img {
     max-width: 200px;
     margin-top: 2em;

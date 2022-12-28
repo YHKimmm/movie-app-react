@@ -5,10 +5,13 @@ import { addFav, deleteFav } from "../features/favs/favsSlice";
 import FavButton from "./FavButton";
 import WatchButton from "./WatchButton";
 import { addWatchList, deleteWatchList } from "../features/watch/watchSlice";
+import { useState } from "react";
 
 const imageFolderPath = process.env.PUBLIC_URL + "/assets/images/";
 
 function DetailMovie({ movieObj, isFav, isWatchList }) {
+    const [imgSize, setImgSize] = useState(false);
+
     const dispatch = useDispatch();
 
     function handleFavClick(addToFav, obj) {
@@ -29,11 +32,20 @@ function DetailMovie({ movieObj, isFav, isWatchList }) {
         }
     }
 
+
+    function handleImgSize() {
+        const imgHandle = document.querySelector('.posterImg');
+        setImgSize(!imgSize);
+        imgSize ? imgHandle.style.width = '280px' : imgHandle.style.width = '1200px';
+    }
+
+
+
     return (
         <div className={`${styles.movie__bgPoster} ${styles.detail__movie}`} style={{ backgroundImage: `url("https://image.tmdb.org/t/p/w300${movieObj.backdrop_path}")` }}>
-            <div className={styles.movie__sPoster}>
+            <div className={styles.movie__sPoster} onClick={handleImgSize}>
                 {movieObj.poster_path === null ? (<img src={`${imageFolderPath}NoImagePlaceHolder.png`} alt="NoImagePlaceHolder" />)
-                    : (<img src={`https://image.tmdb.org/t/p/w300${movieObj.poster_path}`} alt={movieObj.title} />)}
+                    : (<img src={`https://image.tmdb.org/t/p/w300${movieObj.poster_path}`} className='posterImg' alt={movieObj.title} />)}
             </div>
             <section className={styles.movie__content}>
                 <div className={styles.utilities}>
