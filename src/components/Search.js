@@ -20,6 +20,17 @@ function Search({ getMovies, setMovies }) {
 
     const searchMovies = (e) => {
         if (e.key === "Enter" && search) {
+            e.preventDefault();
+            getSearchMovies();
+            setSearch("");
+        } else {
+            getMovies();
+        }
+    }
+
+    const mobileSearch = (e) => {
+        if (search) {
+            e.preventDefault();
             getSearchMovies();
             setSearch("");
         } else {
@@ -34,13 +45,14 @@ function Search({ getMovies, setMovies }) {
 
 
     return (
-        <div className={styles.search__input}>
+        <div className={styles.search__input} >
             <FontAwesomeIcon icon={faSearch} size='2x' style={{ 'padding': '20px' }} />
             <input type="text"
                 ref={ref}
                 value={search}
                 onChange={handleSearch}
                 onKeyDown={searchMovies}
+                onTouchStart={mobileSearch}
                 placeholder="Search movie by a title" />
         </div>
     );

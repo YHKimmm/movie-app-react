@@ -16,7 +16,7 @@ function About() {
                     </section>
                     <section className={styles.about__publisher}>
                         <h3>Meet the publisher</h3>
-                        <p>MegaBox is a React JS project proudly created by Brayden Kim. I am an ambitious web development team who love coding, designing best user experience, and challenging! </p>
+                        <p>MegaBox is a React JS project proudly created by Brayden Kim. I am an ambitious web development individual who love coding, designing best user experience, and challenging! </p>
                     </section>
                 </div>
                 <div className={styles.tmdb}>
