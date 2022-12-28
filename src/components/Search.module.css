@@ -4,7 +4,7 @@
   border: none;
   line-height: 3;
   padding: 0 10px;
-  font-size: 25px;
+  font-size: 1.3em;
   color: #fff;
   outline: none;
 }
@@ -26,10 +26,10 @@
   }
 
   .search__input svg {
-    font-size: 23px;
+    font-size: 1.2em;
   }
 
   .search__input input {
-    font-size: 22px;
+    font-size: 1em;
   }
 }

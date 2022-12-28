@@ -81,13 +81,18 @@
   .navbar .mobile__navigation .hamburger {
     position: absolute;
     right: 5%;
+    top: 5%;
     cursor: pointer;
+    max-width: 40px;
+    height: auto;
   }
 
   .navbar .mobile__navigation .closeIcon {
     position: absolute;
     right: 5%;
+    top: 4.5%;
     cursor: pointer;
+    max-width: 45px;
   }
 
   .navbar nav ul {
@@ -110,16 +115,16 @@
   }
 
   .navbar nav ul li a {
-    font-size: 22px;
+    font-size: 1em;
   }
 
   .logo {
     margin-right: 10px;
-    width: 40px;
+    width: 30px;
     height: auto;
   }
 
   .title a {
-    font-size: 22px;
+    font-size: 0.7em;
   }
 }

@@ -30,12 +30,12 @@
   margin: 0;
   font-weight: 300;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 1.3em;
 }
 
 .movie__title a {
   margin-bottom: 5px;
-  font-size: 35px;
+  font-size: 1em;
   color: white;
   text-decoration: none;
 }
@@ -51,7 +51,7 @@
 }
 
 .movie__overview {
-  font-size: 20px;
+  font-size: 1.2em;
   font-family: Lato, sans-serif;
   line-height: 1.7;
 }
@@ -69,24 +69,24 @@
 
 .movie__rate p {
   color: #0098ff;
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin-left: 20px;
   font-weight: bold;
   margin-top: 20px;
 }
 
 .star {
-  height: 30px;
+  height: 25px;
 }
 
 .star__green {
   filter: hue-rotate(304deg) saturate(94%) brightness(230%);
-  height: 30px;
+  height: 25px;
 }
 
 .star__yellow {
   filter: hue-rotate(174deg) saturate(94%) brightness(230%);
-  height: 30px;
+  height: 25px;
 }
 
 .heart {
@@ -110,6 +110,10 @@
 
 .movie__utilities button {
   margin-bottom: 20px;
+}
+
+.info__link a {
+  font-size: 20px;
 }
 
 .more__info {
@@ -143,22 +147,22 @@
   }
 
   .movie .movie__title a {
-    font-size: 27px;
+    font-size: 1em;
   }
 
   .movie .more__info {
-    font-size: 18px;
+    font-size: 0.8em;
   }
 
   .movie .movie__rate .star,
   .star__yellow,
   .star__green {
-    max-width: 80px;
+    max-width: 70px;
     height: auto;
   }
 
   .movie p {
-    font-size: 18px;
+    font-size: 1em;
   }
 
   .movie__utilities button {

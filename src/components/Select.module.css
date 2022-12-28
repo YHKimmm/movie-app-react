@@ -4,7 +4,7 @@
 
 .select__form label {
   margin-right: 20px;
-  font-size: 25px;
+  font-size: 1.3em;
 }
 
 .select__form select {
@@ -27,6 +27,12 @@
 
 @media (max-width: 780px) {
   .select__form label {
-    font-size: 20px;
+    font-size: 0.9em;
+  }
+
+  .select__form select {
+    font-size: 0.7em;
+    height: 30px;
+    padding: 5px;
   }
 }
