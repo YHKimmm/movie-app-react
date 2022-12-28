@@ -20,3 +20,9 @@
     font-size: smaller;
   }
 }
+
+@media (max-width: 450px) {
+  .fav__button button {
+    font-size: xx-small;
+  }
+}
