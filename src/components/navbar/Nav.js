@@ -9,7 +9,9 @@ function Nav() {
     return (
         <div className={styles.navbar}>
             <h1 className={styles.title}>
-                <img src={`${imageFolderPath}logo.jpg`} alt='logo' className={styles.logo} />
+                <NavLink to='/'>
+                    <img src={`${imageFolderPath}logo.jpg`} alt='logo' className={styles.logo} />
+                </NavLink>
                 <NavLink to='/'>MegaBox</NavLink>
             </h1>
             <MobileNavigation style={{ 'padding': '20px' }} />
