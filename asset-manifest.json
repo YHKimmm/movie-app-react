@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/movie-app-react.git/static/css/main.a15bec73.css",
-    "main.js": "/movie-app-react.git/static/js/main.b42cdaf5.js",
-    "static/js/787.7c42db31.chunk.js": "/movie-app-react.git/static/js/787.7c42db31.chunk.js",
-    "index.html": "/movie-app-react.git/index.html",
-    "main.a15bec73.css.map": "/movie-app-react.git/static/css/main.a15bec73.css.map",
-    "main.b42cdaf5.js.map": "/movie-app-react.git/static/js/main.b42cdaf5.js.map",
-    "787.7c42db31.chunk.js.map": "/movie-app-react.git/static/js/787.7c42db31.chunk.js.map"
+    "main.css": "/movie-app-react/static/css/main.a15bec73.css",
+    "main.js": "/movie-app-react/static/js/main.5776c144.js",
+    "static/js/787.7c42db31.chunk.js": "/movie-app-react/static/js/787.7c42db31.chunk.js",
+    "index.html": "/movie-app-react/index.html",
+    "main.a15bec73.css.map": "/movie-app-react/static/css/main.a15bec73.css.map",
+    "main.5776c144.js.map": "/movie-app-react/static/js/main.5776c144.js.map",
+    "787.7c42db31.chunk.js.map": "/movie-app-react/static/js/787.7c42db31.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a15bec73.css",
-    "static/js/main.b42cdaf5.js"
+    "static/js/main.5776c144.js"
   ]
 }
