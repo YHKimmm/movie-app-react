@@ -6,9 +6,10 @@ import About from "../pages/About";
 import Footer from "../components/Footer";
 import Favorite from "../pages/Favorite";
 import Watch from "../pages/Watch";
+
 function AppRouter() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL} >
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
