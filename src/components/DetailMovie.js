@@ -39,13 +39,11 @@ function DetailMovie({ movieObj, isFav, isWatchList }) {
         imgSize ? imgHandle.style.width = '280px' : imgHandle.style.width = '1200px';
     }
 
-
-
     return (
         <div className={`${styles.movie__bgPoster} ${styles.detail__movie}`} style={{ backgroundImage: `url("https://image.tmdb.org/t/p/w300${movieObj.backdrop_path}")` }}>
-            <div className={styles.movie__sPoster} onClick={handleImgSize}>
+            <div className={styles.movie__sPoster}>
                 {movieObj.poster_path === null ? (<img src={`${imageFolderPath}NoImagePlaceHolder.png`} alt="NoImagePlaceHolder" />)
-                    : (<img src={`https://image.tmdb.org/t/p/w300${movieObj.poster_path}`} className='posterImg' alt={movieObj.title} />)}
+                    : (<img src={`https://image.tmdb.org/t/p/w300${movieObj.poster_path}`} className='posterImg' alt={movieObj.title} onClick={handleImgSize} />)}
             </div>
             <section className={styles.movie__content}>
                 <div className={styles.utilities}>
