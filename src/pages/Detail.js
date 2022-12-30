@@ -32,7 +32,9 @@ function Detail() {
     console.log('Detail ', movie);
     return (
         <div className={styles.detail__wrapper}>
-            {loading ? (<h1>Loading Page...</h1>) : (
+            {loading ? (<div className={styles.loader}>
+                <span>Loading...</span>
+            </div>) : (
                 <DetailMovie
                     movieObj={movie}
                     isFav={isFav(favs, movie.id)}
