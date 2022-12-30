@@ -102,7 +102,7 @@
   }
 }
 
-/* @media (min-width: 1600px) {
+@media (min-width: 1600px) {
   .detail__movie {
     display: block;
   }
@@ -110,7 +110,7 @@
     height: auto;
     padding: 100px;
   }
-} */
+}
 
 @media (max-width: 900px) {
   .detail__movie h1 {
