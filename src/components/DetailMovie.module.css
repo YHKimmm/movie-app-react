@@ -14,8 +14,8 @@
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
-  height: 75vh;
-  padding: 20px;
+  height: auto;
+  padding: 40px;
   padding-bottom: 10px;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .detail__movie h1 {
-  font-size: 3em;
+  font-size: 2.2em;
   font-weight: bold;
   margin-bottom: 1em;
 }
