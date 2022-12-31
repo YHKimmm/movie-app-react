@@ -8,7 +8,6 @@ function Search({ getMovies, setMovies }) {
     const [search, setSearch] = useState("");
 
     const ref = useRef();
-
     const getSearchMovies = async () => {
         let url = `${searchURL}?${api_key}&query=${search}`;
         const response = await fetch(url);

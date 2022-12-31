@@ -47,8 +47,10 @@ function Movie({ movieObj, isFav, isWatchList }) {
                 </div>
             )}
             <div className={styles.movie__poster}>
-                {movieObj.poster_path === null ? (<img src={`${imageFolderPath}NoImagePlaceHolder.png`} alt="NoImagePlaceHolder" className={styles.movie__img} />)
-                    : (<img src={`https://image.tmdb.org/t/p/w300${movieObj.poster_path}`} alt={movieObj.title} className={styles.movie__img} />)}
+                <Link to={`/movie/${movieObj.id}`}>
+                    {movieObj.poster_path === null ? (<img src={`${imageFolderPath}NoImagePlaceHolder.png`} alt="NoImagePlaceHolder" className={styles.movie__img} />)
+                        : (<img src={`https://image.tmdb.org/t/p/w300${movieObj.poster_path}`} alt={movieObj.title} className={styles.movie__img} />)}
+                </Link>
             </div>
             <h2 className={styles.movie__title}>
                 <Link to={`/movie/${movieObj.id}`}>{movieObj.title}</Link>
