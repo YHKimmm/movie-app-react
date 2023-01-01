@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import styles from './Select.module.css';
 
-
 function Select({ onChange, categories }) {
+
     return (
         <section className={styles.select__form}>
             <label htmlFor="selectCategories">Show me</label>

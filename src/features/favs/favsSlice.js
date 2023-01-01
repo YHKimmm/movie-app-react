@@ -1,8 +1,8 @@
-import { appStorageName } from '../../globals/globalVariables';
+import { appStorageFavoriteList } from '../../globals/globalVariables';
 import { createSlice } from '@reduxjs/toolkit';
 
 function getFavs() {
-    let favsFromStorage = localStorage.getItem(appStorageName);
+    let favsFromStorage = localStorage.getItem(appStorageFavoriteList);
     if (favsFromStorage === null) {
         favsFromStorage = [];
     } else {
@@ -28,13 +28,13 @@ export const favsSlice = createSlice({
     reducers: {
         addFav: (state, action) => {
             const newFavs = [...state.items, action.payload];
-            localStorage.setItem(appStorageName, JSON.stringify(newFavs));
+            localStorage.setItem(appStorageFavoriteList, JSON.stringify(newFavs));
             state.items = newFavs;
         },
         deleteFav: (state, action) => {
             const itemsCopy = state.items;
             itemsCopy.splice(getIndex(action.payload, state.items), 1);
-            localStorage.setItem(appStorageName, JSON.stringify(itemsCopy));
+            localStorage.setItem(appStorageFavoriteList, JSON.stringify(itemsCopy));
             state.items = itemsCopy;
         }
     },

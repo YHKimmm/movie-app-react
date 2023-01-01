@@ -1,53 +1,60 @@
 import PropTypes from "prop-types";
 import { searchURL, api_key } from "../globals/globalVariables";
-import { useRef, useState } from "react";
+import { useEffect } from "react";
 import styles from './Search.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-function Search({ getMovies, setMovies }) {
-    const [search, setSearch] = useState("");
+import { setGlobalState, useGlobalState } from "../store";
+function Search({ getMovies, setSearchMovie }) {
+    const [defaultSearch] = useGlobalState("defaultSearch");
 
-    const ref = useRef();
     const getSearchMovies = async () => {
-        let url = `${searchURL}?${api_key}&query=${search}`;
+        let url = `${searchURL}?${api_key}&query=${defaultSearch}`;
         const response = await fetch(url);
         const json = await response.json();
         let results = json.results.slice(0, 12);
+        setSearchMovie(results);
         console.log('search ', results);
-        setMovies(results);
     }
 
     const searchMovies = (e) => {
-        if (e.key === "Enter" && search) {
+        if (e.key === "Enter" && defaultSearch) {
             e.preventDefault();
             getSearchMovies();
-            setSearch("");
+            setGlobalState("defaultSearch", "");
         } else {
             getMovies();
         }
     }
 
     const mobileSearch = () => {
-        if (search) {
+        if (defaultSearch) {
             getSearchMovies();
-            setSearch("");
         } else {
             getMovies();
         }
     }
 
-    const handleSearch = (e) => {
-        setSearch(e.target.value);
-        console.log(search);
+    const searchMovieAsGlobal = () => {
+        if (defaultSearch) {
+            getSearchMovies();
+        }
     }
 
+    const handleSearch = (e) => {
+        setGlobalState("defaultSearch", e.target.value);
+    }
+
+    useEffect(() => {
+        searchMovieAsGlobal();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [defaultSearch])
 
     return (
         <div className={styles.search__input} >
             <FontAwesomeIcon icon={faSearch} size='2x' style={{ 'padding': '20px' }} />
             <input type="text"
-                ref={ref}
-                value={search}
+                value={defaultSearch}
                 onChange={handleSearch}
                 onKeyDown={searchMovies}
                 onTouchStart={mobileSearch}
@@ -58,7 +65,7 @@ function Search({ getMovies, setMovies }) {
 
 Search.propTypes = {
     getMovies: PropTypes.func.isRequired,
-    setMovies: PropTypes.any.isRequired
+    setSearchMovie: PropTypes.any.isRequired
 }
 
 
