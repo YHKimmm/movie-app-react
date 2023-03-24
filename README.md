@@ -39,4 +39,4 @@ https://yhkimmm.github.io/movie-app-react/
 
 ## Preview
 
-![chrome_E5OofbRm30](https://im4.ezgif.com/tmp/ezgif-4-c87663f2c9.jpg)
+![tmdb-movie-app](https://user-images.githubusercontent.com/102700164/227444736-f28a2c5a-1ab1-45e6-8ea2-740fb9ae8979.jpg)
